@@ -17,7 +17,7 @@ import EditProfile from "./pages/EditProfile";
 import NotificationsPage from "./pages/Notifications";
 import CampaignView from "./pages/CampaignView";
 import Events from "./pages/Events";
-import About from "./pages/about.jsx";
+import About from "./pages/About.jsx";
 import Membership from "./pages/Membership.jsx";
 import Help from "./pages/Help.jsx";
 import Terms from "./pages/Terms.jsx";
