@@ -1,0 +1,81 @@
+/* Full screen overlay */
+.ga-loader-overlay {
+  position: fixed;
+  inset: 0;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+/* Inline loader (optional usage) */
+.ga-loader-inline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+/* SVG base */
+.ga-loader-svg {
+  overflow: visible;
+}
+
+/* Text base */
+.ga-text {
+  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont;
+  font-size: 36px;
+  font-weight: 700;
+  fill: #111827;
+  opacity: 0;
+}
+
+/* Give animation */
+.ga-give {
+  animation: giveMove 1.4s ease-in-out infinite;
+  fill: #16a34a; /* green */
+}
+
+/* Aura animation */
+.ga-aura {
+  animation: auraMove 1.4s ease-in-out infinite;
+  fill: #2563eb; /* blue */
+}
+
+/* Keyframes */
+@keyframes giveMove {
+  0% {
+    transform: translateX(-30px);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  60% {
+    transform: translateX(25px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(25px);
+    opacity: 0.3;
+  }
+}
+
+@keyframes auraMove {
+  0% {
+    transform: translateX(30px);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  60% {
+    transform: translateX(-25px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-25px);
+    opacity: 0.3;
+  }
+}

@@ -1,0 +1,448 @@
+/* ======================================================
+   Mobile Header – GiveAura (Trust / Institutional)
+   Used ONLY by MobileHeader.jsx
+   Classes preserved • Behavior preserved
+====================================================== */
+
+@media (max-width: 768px) {
+
+/* ---------------- RESET HELPERS ---------------- */
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ---------------- TOP HEADER ---------------- */
+.mobile-top-header {
+  position: sticky;
+  top: 0;
+  z-index: 120;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.mobile-top-header .icon-btn {
+  font-size: 18px;
+  background: none;
+  border: none;
+  color: #111827;
+  position: relative;
+  cursor: pointer;
+}
+
+/* ---------------- BRAND ---------------- */
+.brand-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #111827;
+  font-weight: 700;
+}
+
+.logo-video {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+/* ---------------- NOTIFICATION BADGE ---------------- */
+.notif-badge {
+  position: absolute;
+  top: -4px;
+  right: -6px;
+  background: #dc2626;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 999px;
+}
+
+/* ---------------- PROFILE AVATAR ---------------- */
+.profile-avatar-btn {
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.profile-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* ---------------- MOBILE BANNER ---------------- */
+
+.mobile-banner {
+  width: 100%;
+  max-height: 180px;
+  margin: 10px 0;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Track */
+.mobile-banner-track {
+  display: flex;
+  transition: transform 0.45s ease;
+  will-change: transform;
+}
+
+/* Item */
+.mobile-banner-item {
+  flex: 0 0 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background: #ffffff;
+}
+
+/* Image */
+.mobile-banner img {
+  width: 100%;
+  max-height: 180px;
+  object-fit: contain;
+}
+
+/* ---------------- Dots ---------------- */
+.mobile-banner-dots {
+  position: absolute;
+  bottom: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+}
+
+/* Dot */
+.mobile-banner-dots button {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  border: none;
+  background: #d1d5db;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+/* Active */
+.mobile-banner-dots button.active {
+  width: 14px;
+  border-radius: 999px;
+  background: #0f766e;
+}
+
+/* ---------------- Label ---------------- */
+.mobile-banner::before {
+  content: "Featured campaigns";
+  position: absolute;
+  top: 6px;
+  left: 10px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #6b7280;
+}
+
+
+/* ---------------- MOBILE TICKER ---------------- */
+.mobile-ticker {
+  width: 100%;
+  overflow: hidden;
+  background: #f9fafb;
+  border-top: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.mobile-ticker-inner {
+  width: 100%;
+  overflow: hidden;
+  padding: 6px 0;
+}
+
+.mobile-ticker-track {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  animation: mobileTickerFlow 18s linear infinite;
+}
+
+.ticker-item {
+  padding-right: 64px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #374151;
+}
+
+@keyframes mobileTickerFlow {
+  from { transform: translateX(100%); }
+  to   { transform: translateX(-100%); }
+}
+
+.mobile-ticker:hover .mobile-ticker-track,
+.mobile-ticker:active .mobile-ticker-track {
+  animation-play-state: paused;
+}
+
+/* ---------------- MOBILE FILTER MODAL ---------------- */
+.mobile-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  background: rgba(0,0,0,0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.mobile-modal-card {
+  width: 100%;
+  max-width: 380px;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 16px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+/* Header */
+.mobile-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.mobile-modal-header h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.modal-close-btn {
+  background: none;
+  border: none;
+  color: #6b7280;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* Groups */
+.filter-group {
+  margin-bottom: 14px;
+}
+
+.filter-group label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #6b7280;
+  margin-bottom: 6px;
+}
+
+.mobile-modal-card select {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  color: #111827;
+  font-size: 14px;
+}
+
+/* Toggle */
+.filter-toggle {
+  display: flex;
+  gap: 10px;
+}
+
+.filter-toggle button {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  color: #111827;
+  font-weight: 600;
+}
+
+.filter-toggle button.active {
+  background: #0f766e;
+  border-color: #0f766e;
+  color: #ffffff;
+}
+
+/* Actions */
+.filter-actions {
+  margin-top: 16px;
+}
+
+.filter-apply-btn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  font-weight: 700;
+  background: #0f766e;
+  color: #ffffff;
+  font-size: 15px;
+}
+
+/* ---------------- DRAWER ---------------- */
+.mobile-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 78%;
+  max-width: 300px;
+  height: 100%;
+  background: #ffffff;
+  z-index: 350;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  animation: slideIn 0.25s ease forwards;
+}
+
+@keyframes slideIn {
+  from { transform: translateX(-100%); }
+  to   { transform: translateX(0); }
+}
+
+.drawer-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.drawer-user img {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.drawer-user strong {
+  color: #111827;
+  font-size: 14px;
+}
+
+.drawer-user small {
+  color: #6b7280;
+  font-size: 12px;
+}
+
+.mobile-drawer nav {
+  display: grid;
+  gap: 8px;
+}
+
+.mobile-drawer nav button {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  color: #111827;
+  font-weight: 600;
+  text-align: left;
+}
+
+.mobile-drawer nav button.danger {
+  background: #fee2e2;
+  color: #991b1b;
+  border-color: #fecaca;
+}
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  z-index: 340;
+}
+
+/* ---------------- BOTTOM TASKBAR ---------------- */
+.mobile-taskbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: #ffffff;
+  border-top: 1px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 200;
+}
+
+.mobile-taskbar button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #374151;
+  cursor: pointer;
+}
+
+/* Primary action */
+.mobile-taskbar .create-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #0f766e;
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 800;
+  transform: translateY(-10px);
+}
+}
+
+/* ---------------- SEARCH MODAL ---------------- */
+.search-modal-card input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  color: #111827;
+  font-size: 14px;
+}
+
+.search-primary-btn {
+  flex: 1;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 700;
+  background: #0f766e;
+  color: #ffffff;
+}
+
+.search-secondary-btn {
+  flex: 1;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  color: #111827;
+  font-weight: 600;
+}

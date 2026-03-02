@@ -1,0 +1,54 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+
+    /* ---------------- Helpers ---------------- */
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(uid) {
+      return request.auth != null && request.auth.uid == uid;
+    }
+
+    /* =======================
+       PROFILE PHOTOS
+       ======================= */
+    match /profilePhotos/{fileName} {
+
+      // Public read (profile avatars are public)
+      allow read: if true;
+
+      // Only the owner (UID prefix before _) can upload
+      allow write: if
+        isSignedIn() &&
+        fileName.matches('^' + request.auth.uid + '_.*');
+    }
+
+    /* =======================
+       CAMPAIGN MEDIA (IMAGES & VIDEOS)
+       ======================= */
+    match /campaigns/{uid}/{allPaths=**} {
+      // Anyone can view campaign media
+      allow read: if true;
+
+      // Only the campaign owner can upload / update / delete
+      allow write: if isOwner(uid);
+    }
+
+    /* =======================
+       POPUP / UI MEDIA
+       ======================= */
+    match /popups/{allPaths=**} {
+      allow read: if true;
+      allow write: if isSignedIn();
+    }
+
+    /* =======================
+       DEFAULT: DENY EVERYTHING ELSE
+       ======================= */
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}

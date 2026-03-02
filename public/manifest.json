@@ -1,0 +1,16 @@
+{
+  "name": "Fundraiser",
+  "short_name": "Fundraiser",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "description": "Fundraising donation platform",
+  "icons": [
+    {
+      "src": "/vite.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    }
+  ]
+}

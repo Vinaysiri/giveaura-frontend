@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
+    <title>GiveAura™ | Empowering Fundraisers</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <meta
+      name="description"
+      content="GiveAura™ connects verified fundraisers, donors, and impact events."
+    />
+    <meta name="robots" content="index,follow" />
+    <meta name="theme-color" content="#111827" />
+    <base href="/" />
+
+    <!-- PNG FAVICON (TRANSPARENT / CIRCULAR LOGO) -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/GiveAuraLogo.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/GiveAuraLogo.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/GiveAuraLogo.png" />
+
+    <!-- App / PWA identity -->
+    <meta name="apple-mobile-web-app-title" content="GiveAura" />
+    <meta name="application-name" content="GiveAura" />
+
+    <!-- Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+  </head>
+
+  <body>
+    <div id="root"></div>
+
+    <noscript>
+      <div
+        style="padding:16px;text-align:center;background:#fff;color:#111;"
+      >
+        This app requires JavaScript to run. Please enable JavaScript in your browser.
+      </div>
+    </noscript>
+
+    <!-- Razorpay checkout -->
+    <script async src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+    <!-- React entrypoint -->
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

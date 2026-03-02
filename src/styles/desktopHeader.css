@@ -1,0 +1,500 @@
+/* ======================================================
+   Desktop Header – GiveAura (Trust / Institutional)
+   SAME STRUCTURE • SAME CLASSES • SERIOUS UI
+====================================================== */
+
+/* ---------------- Theme / Variables ---------------- */
+:root {
+  --primary: #0f766e;          /* Trust teal */
+  --primary-dark: #115e59;
+
+  --bg-main: #ffffff;
+  --bg-muted: #f9fafb;
+
+  --text-strong: #111827;
+  --text-soft: #6b7280;
+
+  --border-soft: #e5e7eb;
+
+  --shadow-soft: 0 2px 6px rgba(0,0,0,0.06);
+
+  --radius-lg: 10px;
+  --radius-sm: 6px;
+
+  --max-content: 1120px;
+}
+
+/* ---------------- Header Shell ---------------- */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 120;
+  width: 100%;
+  background: var(--bg-main);
+  border-bottom: 1px solid var(--border-soft);
+  box-shadow: var(--shadow-soft);
+  color: var(--text-strong);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+}
+
+/* ---------------- Inner ---------------- */
+.header .inner {
+  max-width: var(--max-content);
+  margin: 0 auto;
+  padding: 10px 16px;
+}
+
+/* ---------------- Header Top ---------------- */
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 64px;
+}
+
+/* ---------------- Logo ---------------- */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.logo-video {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* ---------------- Hero Carousel ---------------- */
+.hero-carousel {
+  flex: 0 1 420px;
+  max-width: 480px;
+  height: 88px;
+
+  background: #ffffff;
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-sm);
+
+  overflow: hidden;
+  position: relative;
+
+  box-shadow: var(--shadow-soft);
+}
+
+/* Track */
+.hero-carousel .track {
+  display: flex;
+  height: 100%;
+  transition: transform 0.5s ease;
+  will-change: transform;
+}
+
+/* Item */
+.hero-carousel .item {
+  flex: 0 0 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+/* Image */
+.hero-carousel img {
+  max-height: 70px;
+  max-width: 90%;
+  object-fit: contain;
+}
+
+/* ---------------- Dots ---------------- */
+.hero-dots {
+  position: absolute;
+  bottom: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+}
+
+/* Dot */
+.hero-dots button {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  border: none;
+  background: #d1d5db;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+/* Hover */
+.hero-dots button:hover {
+  background: #9ca3af;
+  transform: scale(1.15);
+}
+
+/* Active */
+.hero-dots button.active {
+  width: 14px;
+  border-radius: 999px;
+  background: var(--primary);
+}
+
+/* ---------------- Label (optional but recommended) */
+.hero-carousel::before {
+  content: "Featured campaigns";
+  position: absolute;
+  top: 6px;
+  left: 10px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-soft);
+  letter-spacing: 0.02em;
+}
+
+/* ---------------- Responsive ---------------- */
+@media (max-width: 1150px) {
+  .hero-carousel {
+    display: none;
+  }
+}
+
+
+/* ---------------- Right Actions ---------------- */
+.header-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ---------------- Buttons ---------------- */
+.btn {
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: 600;
+  border: 1px solid var(--border-soft);
+  cursor: pointer;
+  background: #ffffff;
+  color: var(--text-strong);
+  transition: background 0.15s ease, border 0.15s ease;
+}
+
+.btn:hover {
+  background: #f9fafb;
+}
+
+/* Primary CTA */
+.btn-create {
+  background: var(--primary);
+  color: #ffffff;
+  border-color: var(--primary);
+}
+
+.btn-create:hover {
+  background: var(--primary-dark);
+}
+
+/* Neutral buttons */
+.btn-donations,
+.btn-admin,
+.btn-help {
+  background: #ffffff;
+  color: var(--text-strong);
+}
+
+/* Logout (still clear but not aggressive) */
+.btn-logout {
+  background: #fee2e2;
+  color: #991b1b;
+  border-color: #fecaca;
+}
+
+/* ---------------- Profile ---------------- */
+.profile-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  background: #ffffff;
+  border: 1px solid var(--border-soft);
+  cursor: pointer;
+}
+
+.profile-btn .avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* ---------------- Icon Buttons ---------------- */
+.icon-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-soft);
+  background: #ffffff;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.bell-dot {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #dc2626;
+}
+
+/* ---------------- Dropdown Panels ---------------- */
+.notif-panel,
+.profile-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  padding: 12px;
+  border: 1px solid var(--border-soft);
+  box-shadow: var(--shadow-soft);
+  z-index: 260;
+}
+
+.notif-panel { width: 320px; }
+.profile-menu { width: 220px; }
+
+/* ---------------- Header Bottom ---------------- */
+.header-bottom {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Search / Select */
+.search-input,
+.select {
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-soft);
+  background: #ffffff;
+  color: var(--text-strong);
+  font-size: 14px;
+}
+
+.search-input::placeholder {
+  color: var(--text-soft);
+}
+
+/* Chip */
+.chip {
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-soft);
+  background: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ---------------- Donation Ticker ---------------- */
+.ticker-bar {
+  margin-top: 8px;
+  min-height: 34px;
+  display: flex;
+  align-items: center;
+  border-radius: var(--radius-sm);
+  padding: 6px 14px;
+  background: var(--bg-muted);
+  border: 1px solid var(--border-soft);
+  overflow: hidden;
+}
+
+.giveaura-marquee {
+  white-space: nowrap;
+  padding-left: 100%;
+  animation: giveauraMarquee 18s linear infinite;
+  color: var(--text-soft);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+@keyframes giveauraMarquee {
+  from { transform: translateX(100%); }
+  to   { transform: translateX(-100%); }
+}
+
+/* ---------------- Breakpoints ---------------- */
+@media (max-width: 980px) {
+  .header-buttons {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
+
+/* ======================================================
+   FILTER PANEL – POPUP MODAL STYLE (Premium / Institutional)
+====================================================== */
+
+/* Overlay backdrop */
+.filter-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(4px);
+  z-index: 4000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  animation: filterFadeIn 180ms ease;
+}
+
+/* Popup container */
+.filter-panel-attached {
+  position: relative;
+  width: 100%;
+  max-width: 720px;
+
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid #e5e7eb;
+
+  padding: 24px 26px;
+
+  box-shadow:
+    0 25px 60px rgba(15, 23, 42, 0.25),
+    0 8px 24px rgba(15, 23, 42, 0.08);
+
+  animation: filterPopIn 240ms cubic-bezier(.22,.9,.32,1);
+}
+
+/* Header */
+.filter-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.filter-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.filter-close-btn {
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: #64748b;
+  transition: 0.15s ease;
+}
+
+.filter-close-btn:hover {
+  color: #0f172a;
+  transform: scale(1.1);
+}
+
+/* Grid */
+.filter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+}
+
+/* Labels */
+.filter-panel-attached label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #475569;
+  margin-bottom: 6px;
+  display: block;
+}
+
+/* Select */
+.filter-panel-attached select {
+  width: 100%;
+  padding: 10px 14px;
+
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  transition: 0.18s ease;
+}
+
+.filter-panel-attached select:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* Actions */
+.filter-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* Buttons inside filter */
+.filter-actions .btn {
+  padding: 9px 16px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.filter-actions .btn.apply {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.filter-actions .btn.apply:hover {
+  background: #1d4ed8;
+}
+
+.filter-actions .btn.reset {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+.filter-actions .btn.reset:hover {
+  background: #e2e8f0;
+}
+
+/* Animations */
+@keyframes filterPopIn {
+  0% {
+    opacity: 0;
+    transform: translateY(16px) scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes filterFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

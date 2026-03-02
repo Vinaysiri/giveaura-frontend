@@ -1,0 +1,139 @@
+.bp-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0f172a;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.bp-card {
+  max-width: 520px;
+  width: 100%;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px 20px 16px;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.45);
+  box-sizing: border-box;
+}
+
+.bp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.bp-header h2 {
+  margin: 0;
+}
+
+.bp-sub {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: #4b5563;
+}
+
+.bp-close {
+  border: none;
+  background: #e5e7eb;
+  border-radius: 999px;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+}
+
+.bp-section {
+  margin-bottom: 14px;
+}
+
+.bp-label {
+  font-weight: 600;
+  font-size: 14px;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.bp-input {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.bp-hint {
+  margin-top: 4px;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.bp-summary {
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  padding: 10px 12px;
+  background: #f9fafb;
+}
+
+.bp-summary-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.bp-summary-row:last-child {
+  margin-bottom: 0;
+}
+
+.bp-error {
+  color: #b91c1c;
+  font-size: 13px;
+  margin-top: 6px;
+}
+
+.bp-warning {
+  color: #92400e;
+  font-size: 13px;
+  margin-top: 6px;
+}
+
+.bp-status {
+  color: #15803d;
+  font-size: 13px;
+  margin-top: 6px;
+}
+
+.bp-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.bp-btn {
+  border-radius: 999px;
+  padding: 8px 14px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.bp-btn.primary {
+  background: #2563eb;
+  color: #fff;
+}
+
+.bp-btn.secondary {
+  background: #e5e7eb;
+  color: #111827;
+}
+
+.bp-footnote {
+  margin-top: 10px;
+  font-size: 11px;
+  color: #6b7280;
+}

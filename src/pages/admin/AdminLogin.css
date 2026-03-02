@@ -1,0 +1,420 @@
+/* src/pages/admin/AdminLogin.css
+   Modern admin login styles (glass card + CTA + Google button)
+*/
+
+/* ---- variables / theme ---- */
+:root {
+  --bg-1: #0f172a; /* deep indigo */
+  --bg-2: #0ea5e9; /* blue */
+  --card-bg: rgba(255, 255, 255, 0.82);
+  --card-border: rgba(255, 255, 255, 0.18);
+  --muted: #6b7280;
+  --accent: #4f46e5; /* indigo-600 */
+  --accent-600: #4338ca;
+  --danger: #dc2626;
+  --glass-blur: 8px;
+  --radius-lg: 14px;
+  --shadow-1: 0 10px 30px rgba(2, 6, 23, 0.12);
+  --shadow-2: 0 6px 18px rgba(2, 6, 23, 0.06);
+  --transition-fast: 180ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  --surface-1: #ffffff;
+}
+
+/* ---- page background ---- */
+.admin-login-root {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 28px;
+  background:
+    radial-gradient(
+      1200px 600px at 10% 20%,
+      rgba(79, 70, 229, 0.2),
+      transparent 10%
+    ),
+    linear-gradient(180deg, var(--bg-1) 0%, var(--bg-2) 100%);
+  color: #0f172a;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ---- card (glass) ---- */
+.admin-login-card {
+  width: 100%;
+  max-width: 820px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.86),
+    rgba(255, 255, 255, 0.84)
+  );
+  border: 1px solid var(--card-border);
+  box-shadow: var(--shadow-1);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr;
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+  backdrop-filter: blur(var(--glass-blur));
+}
+
+/* hover lift */
+.admin-login-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(2, 6, 23, 0.14);
+}
+
+/* header area */
+.admin-login-header {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  padding: 22px;
+  border-bottom: 1px solid rgba(2, 6, 23, 0.04);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.6),
+    rgba(255, 255, 255, 0.55)
+  );
+}
+
+.admin-login-logo {
+  height: 46px;
+  width: auto;
+  display: block;
+  border-radius: 8px;
+  object-fit: contain;
+  box-shadow: var(--shadow-2);
+}
+
+.admin-login-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: #0b1220;
+  margin: 0;
+}
+
+.admin-login-sub {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+/* content grid */
+.admin-login-body {
+  padding: 24px;
+  display: grid;
+  gap: 12px;
+}
+
+/* label */
+.admin-label {
+  font-size: 13px;
+  color: #101828;
+  font-weight: 600;
+}
+
+/* input */
+.admin-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  background: #fff;
+  font-size: 15px;
+  color: #0b1220;
+  outline: none;
+  transition:
+    box-shadow var(--transition-fast),
+    border-color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+/* focus ring */
+.admin-input:focus {
+  border-color: rgba(79, 70, 229, 0.22);
+  box-shadow: 0 6px 18px rgba(79, 70, 229, 0.08);
+  transform: translateY(-1px);
+}
+
+/* primary button */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 12px 14px;
+  font-weight: 700;
+  font-size: 15px;
+  color: #fff;
+  background: linear-gradient(
+    180deg,
+    var(--accent) 0%,
+    var(--accent-600) 100%
+  );
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(79, 70, 229, 0.18);
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast),
+    opacity var(--transition-fast);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+}
+
+.btn-primary:active {
+  transform: translateY(-1px);
+}
+
+.btn-primary[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* secondary button (for Cancel) */
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+  padding: 12px 14px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #0b1220;
+  background: #ffffff;
+  border-radius: 10px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  cursor: pointer;
+  transition:
+    background var(--transition-fast),
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.btn-secondary:hover {
+  background: #f9fafb;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.08);
+}
+
+/* google button */
+.btn-google {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 10px 12px;
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  font-weight: 600;
+  color: #0b1220;
+  cursor: pointer;
+  justify-content: center;
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.btn-google svg {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.btn-google:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(2, 6, 23, 0.06);
+}
+
+.btn-google[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* divider */
+.login-divider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 6px 0 8px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.login-divider hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(15, 23, 42, 0.04),
+    rgba(15, 23, 42, 0.02)
+  );
+  flex: 1;
+}
+
+/* message / errors */
+.login-message {
+  font-size: 13px;
+  color: var(--danger);
+  margin-top: 6px;
+}
+
+/* tip line */
+.login-tip {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+/* footer small */
+.admin-login-footer {
+  grid-column: 1 / -1;
+  padding: 10px 18px;
+  border-top: 1px solid rgba(2, 6, 23, 0.04);
+  text-align: center;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* spinner small */
+.spinner {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 0, 0, 0.08);
+  border-top-color: rgba(0, 0, 0, 0.28);
+  animation: spin 800ms linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ----- unlocked state panel ----- */
+.unlock-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 24px 18px;
+  border-radius: 16px;
+  background: linear-gradient(
+    180deg,
+    rgba(240, 253, 250, 0.9),
+    rgba(224, 242, 254, 0.9)
+  );
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  box-shadow: 0 10px 30px rgba(15, 118, 110, 0.1);
+}
+
+.unlock-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 0, #bbf7d0, #22c55e);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ecfdf3;
+  font-size: 32px;
+  box-shadow: 0 0 0 6px rgba(34, 197, 94, 0.15);
+}
+
+.unlock-title {
+  margin: 4px 0 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #064e3b;
+}
+
+.unlock-text {
+  margin: 2px 0 0;
+  font-size: 13px;
+  color: #047857;
+  text-align: center;
+}
+
+.unlock-actions {
+  margin-top: 12px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  width: 100%;
+}
+
+/* responsive layout */
+@media (min-width: 860px) {
+  .admin-login-card {
+    grid-template-columns: 420px 1fr;
+  }
+
+  .admin-login-header {
+    border-bottom: none;
+    border-right: 1px solid rgba(2, 6, 23, 0.04);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 28px;
+    gap: 12px;
+  }
+
+  .admin-login-body {
+    padding: 28px;
+  }
+}
+
+/* small screens */
+@media (max-width: 520px) {
+  .admin-login-card {
+    border-radius: 12px;
+  }
+
+  .admin-login-title {
+    font-size: 18px;
+  }
+
+  .admin-login-sub {
+    font-size: 12px;
+  }
+
+  .admin-input {
+    font-size: 14px;
+  }
+
+  .btn-primary {
+    font-size: 14px;
+    padding: 11px;
+  }
+}
+
+/* accessible focus for keyboard users */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+:focus-visible {
+  outline: 3px solid rgba(79, 70, 229, 0.18);
+  outline-offset: 2px;
+}
+
+/* small utility */
+.text-muted {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.small {
+  font-size: 12px;
+}

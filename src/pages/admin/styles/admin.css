@@ -1,0 +1,381 @@
+/* =====================================================
+   GIVEAURA ADMIN — PROFESSIONAL TRUST DASHBOARD SYSTEM
+   Stable Layout • No Overflow • Clean Fintech Feel
+===================================================== */
+
+:root {
+  --bg-main: #f4f7fb;
+  --bg-card: #ffffff;
+  --primary: #1e3a8a;
+  --primary-soft: #eef2ff;
+  --border: #e6edf5;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --success: #16a34a;
+  --warning: #f59e0b;
+  --danger: #dc2626;
+
+  --shadow-sm: 0 4px 14px rgba(15, 23, 42, 0.04);
+  --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.05);
+}
+
+/* ======================================
+   GLOBAL FIXES (IMPORTANT)
+====================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background: var(--bg-main);
+}
+
+/* ======================================
+   LAYOUT SHELL
+====================================== */
+
+.admin-shell {
+  display: grid;
+  grid-template-columns: 250px minmax(0, 1fr);
+  min-height: 100vh;
+  background: var(--bg-main);
+  overflow: hidden;
+}
+
+/* CRITICAL FIX */
+.admin-main {
+  min-width: 0;   /* prevents grid overflow */
+  padding: 24px 28px;
+  overflow-x: hidden;
+}
+
+/* ======================================
+   SIDEBAR
+====================================== */
+
+.admin-left {
+  background: #ffffff;
+  border-right: 1px solid var(--border);
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+}
+
+.nav-section {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.nav-item {
+  padding: 10px 14px;
+  border-radius: 8px;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.nav-item:hover {
+  background: var(--primary-soft);
+  color: var(--primary);
+}
+
+.nav-active {
+  background: var(--primary);
+  color: #fff;
+  font-weight: 600;
+}
+
+/* ======================================
+   TOP BAR
+====================================== */
+
+.admin-top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 22px;
+  flex-wrap: wrap;
+}
+
+.search-input {
+  min-width: 220px;
+  max-width: 100%;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: #fff;
+}
+
+/* ======================================
+   KPI ROW
+====================================== */
+
+.kpi-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.kpi-card,
+.stat-card {
+  background: var(--bg-card);
+  border-radius: 12px;
+  padding: 18px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+
+.kpi-value {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.kpi-label {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* ======================================
+   CONTENT GRID
+====================================== */
+
+.content-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: 20px;
+  align-items: start;
+  width: 100%;
+}
+
+.content-left,
+.content-right {
+  min-width: 0;   /* CRITICAL */
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ======================================
+   CARDS
+====================================== */
+
+.card {
+  background: var(--bg-card);
+  border-radius: 14px;
+  padding: 18px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  width: 100%;
+}
+
+.card h3,
+.card h4,
+.card h5 {
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+/* ======================================
+   CHART FIX (IMPORTANT)
+====================================== */
+
+.chart-card svg {
+  width: 100% !important;
+  height: auto;
+  max-width: 100%;
+  display: block;
+}
+
+/* ======================================
+   TABLE
+====================================== */
+
+.table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 10px 8px;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+}
+
+.table tr:hover {
+  background: #f8fafc;
+}
+
+/* ======================================
+   CAMPAIGN ITEMS
+====================================== */
+
+.campaign-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.campaign-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;   /* prevents overflow */
+}
+
+/* ======================================
+   RISK CARD
+====================================== */
+
+.risk-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.risk-circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  background: var(--primary-soft);
+  color: var(--primary);
+}
+
+/* ======================================
+   ACTIVITY LIST
+====================================== */
+
+.activity-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.activity-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--primary-soft);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+/* ======================================
+   BUTTONS
+====================================== */
+
+.btn,
+.btn-outline,
+.btn-primary,
+.btn-danger {
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.btn {
+  background: #fff;
+  border: 1px solid var(--border);
+}
+
+.btn:hover {
+  background: var(--primary-soft);
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+.btn-outline {
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  background: transparent;
+}
+
+.btn-danger {
+  background: var(--danger);
+  color: #fff;
+  border: none;
+}
+
+.small-btn {
+  padding: 6px 10px;
+  font-size: 12px;
+}
+
+/* ======================================
+   MODAL
+====================================== */
+
+.modal-body-scroll {
+  max-height: 65vh;
+  overflow-y: auto;
+}
+
+/* ======================================
+   RESPONSIVE
+====================================== */
+
+@media (max-width: 1100px) {
+  .admin-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .kpi-row {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-main {
+    padding: 16px;
+  }
+}

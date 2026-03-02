@@ -1,0 +1,305 @@
+/* ======================================================
+   PROFILE PAGE – TRUST / VERIFIED STYLE
+   Calm • Professional • Financial-Grade
+====================================================== */
+
+/* ---------- Page Wrapper ---------- */
+.profile-container {
+  max-width: 820px;
+  margin: 40px auto;
+  padding: 28px;
+  background: #ffffff;
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+}
+
+/* ---------- Header ---------- */
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.profile-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #f1f5f9;
+  border: 2px solid #e5e7eb;
+}
+
+.profile-info {
+  flex: 1;
+}
+
+.profile-info h2 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.profile-email {
+  font-size: 14px;
+  color: #475569;
+  margin-top: 2px;
+}
+
+.profile-bio {
+  font-size: 14px;
+  color: #64748b;
+  margin-top: 6px;
+  line-height: 1.5;
+}
+
+/* ---------- Status ---------- */
+.profile-status {
+  margin-top: 8px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.profile-status.public {
+  color: #16a34a;
+}
+
+.profile-status.private {
+  color: #d97706;
+}
+
+/* ---------- Divider ---------- */
+.profile-divider {
+  margin: 26px 0;
+  border: none;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* ======================================================
+   INFO BLOCKS (Phone / Bank)
+====================================================== */
+
+.profile-section {
+  margin-bottom: 22px;
+}
+
+.profile-section h3 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 8px;
+}
+
+.profile-card {
+  padding: 14px 16px;
+  background: #f9fafb;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  font-size: 14px;
+  color: #111827;
+}
+
+.profile-muted {
+  font-size: 12px;
+  color: #64748b;
+  margin-top: 6px;
+}
+
+/* ---------- Bank Details ---------- */
+.profile-bank p {
+  margin: 4px 0;
+  line-height: 1.6;
+}
+
+/* ======================================================
+   ACTION BUTTONS
+====================================================== */
+
+.profile-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+.profile-btn {
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.15s ease;
+}
+
+/* Primary */
+.profile-btn.primary {
+  background: #2563eb;
+  color: #ffffff;
+  box-shadow: 0 8px 22px rgba(37, 99, 235, 0.35);
+}
+
+.profile-btn.primary:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+/* Secondary */
+.profile-btn.secondary {
+  background: #ffffff;
+  color: #0f172a;
+  border: 1px solid #e5e7eb;
+}
+
+.profile-btn.secondary:hover {
+  background: #f8fafc;
+}
+
+/* ======================================================
+   WALLET BUTTON
+====================================================== */
+
+.profile-wallet-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.profile-wallet-btn:hover {
+  box-shadow: 0 6px 16px rgba(2, 6, 23, 0.12);
+  transform: translateY(-1px);
+}
+
+/* ======================================================
+   SHARE & EARN – TRUST CARD
+====================================================== */
+
+.share-earn-card {
+  margin-top: 28px;
+  padding: 18px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #0f172a, #020617);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+}
+
+.share-earn-card h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #e5e7eb;
+}
+
+.share-earn-card p {
+  font-size: 13px;
+  color: #cbd5f5;
+  margin-top: 4px;
+}
+
+.share-earn-box {
+  display: flex;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.share-earn-box input {
+  flex: 1;
+  padding: 9px 12px;
+  border-radius: 10px;
+  background: #020617;
+  border: 1px solid #334155;
+  color: #e5e7eb;
+  font-size: 13px;
+}
+
+.share-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+
+/* Buttons inside share card */
+.share-actions button {
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  border: 1px solid rgba(226, 232, 240, 0.25);
+  background: transparent;
+  color: #e5e7eb;
+  cursor: pointer;
+}
+
+.share-actions button:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* ======================================================
+   TOAST
+====================================================== */
+
+.referral-toast {
+  position: fixed;
+  top: 90px;
+  right: 24px;
+  z-index: 999;
+  background: linear-gradient(135deg, #2563eb, #06b6d4);
+  color: #ffffff;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 14px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-8px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ======================================================
+   ADMIN NOTICE
+====================================================== */
+
+.profile-admin-note {
+  margin-top: 22px;
+  font-size: 13px;
+  color: #6b7280;
+  text-align: center;
+}
+
+/* ======================================================
+   MOBILE
+====================================================== */
+
+@media (max-width: 640px) {
+  .profile-container {
+    padding: 18px;
+    margin: 20px 12px;
+  }
+
+  .profile-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .profile-avatar {
+    width: 96px;
+    height: 96px;
+  }
+}

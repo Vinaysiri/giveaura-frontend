@@ -1,0 +1,24 @@
+{
+  "name": "functions",
+  "description": "Cloud Functions for Firebase (source: functions)",
+  "private": true,
+  "engines": {
+    "node": "20"
+  },
+  "scripts": {
+    "lint": "eslint . || true",
+    "build": "echo \"Nothing to build for functions\"",
+    "deploy": "firebase deploy --only functions"
+  },
+  "dependencies": {
+    "body-parser": "^2.2.1",
+    "cors": "^2.8.5",
+    "express": "^4.22.1",
+    "firebase-admin": "^12.7.0",
+    "firebase-functions": "^5.1.1",
+    "razorpay": "^2.9.6"
+  },
+  "devDependencies": {
+    "eslint": "^8.0.0"
+  }
+}

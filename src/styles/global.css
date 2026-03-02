@@ -1,0 +1,199 @@
+/* Global CSS */
+:root {
+  --primary-gradient: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+  --secondary-color: #4caf50;
+  --danger-color: #f44336;
+  --card-bg: #fff;
+  --bg-color: #f5f6fa;
+  --text-color: #333;
+  --font-family: 'Roboto', sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg-color);
+  font-family: var(--font-family);
+  color: var(--text-color);
+}
+
+/* Buttons */
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 500;
+  color: #fff;
+  background: var(--primary-gradient);
+  transition: all 0.3s ease;
+}
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+.btn-small {
+  padding: 5px 12px;
+  font-size: 14px;
+}
+.btn-danger {
+  background: var(--danger-color);
+}
+
+/* Inputs and selects */
+input, select, textarea {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+input:focus, select:focus, textarea:focus {
+  border-color: var(--primary-gradient);
+  box-shadow: 0 0 5px rgba(100, 100, 255, 0.2);
+}
+
+/* Cards */
+.card {
+  background: var(--card-bg);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* Header */
+header {
+  background: var(--primary-gradient);
+  color: #fff;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+header h1 {
+  margin: 0 0 10px 0;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* Progress Bar */
+.progress-bar {
+  background: #eee;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 15px;
+  margin: 10px 0;
+}
+.progress-bar .progress {
+  background: var(--secondary-color);
+  height: 100%;
+  transition: width 0.5s ease;
+}
+
+/* Modal */
+.ReactModal__Content {
+  border-radius: 10px !important;
+  padding: 20px !important;
+  max-width: 500px;
+  width: 90%;
+  max-height: 70%;
+  overflow-y: auto;
+}
+
+
+/* Bell button base (keep your existing .btn rules) */
+.btn.bell-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: transparent;
+  border: 1px solid transparent;
+  font-size: 18px;
+  transition: background-color 150ms ease, color 150ms ease, transform 120ms ease;
+  cursor: pointer;
+}
+
+/* Red state when there are unread notifications */
+.btn.bell-button.has-unread {
+  background: #ef4444;   /* red-500 */
+  color: #fff;
+  border-color: rgba(0,0,0,0.06);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.08);
+}
+
+/* subtle hover effect */
+.btn.bell-button:hover {
+  transform: translateY(-1px);
+}
+
+/* small filled red dot (no number) — top-right corner */
+.bell-dot {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #dc2626; /* red-600 */
+  box-shadow: 0 0 0 3px rgba(220,38,38,0.08); /* halo */
+  pointer-events: none;
+}
+
+/* numeric badges: share base */
+.notif-badge {
+  position: absolute;
+  min-width: 20px;
+  height: 20px;
+  line-height: 20px;
+  padding: 0 6px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.12);
+}
+
+/* user badge (stacked left of top-right) */
+.notif-badge-user {
+  top: -6px;
+  right: -6px;
+  background: #ffffff; /* white bubble for user badge when bell red */
+  color: #ef4444;      /* red-500 text */
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+/* admin badge (slightly offset, distinct color) */
+.notif-badge-admin {
+  top: 18px;
+  right: -6px;
+  background: #111827; /* gray-900 */
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+/* When bell is NOT red, make sure badges remain visible with good contrast */
+.btn.bell-button:not(.has-unread) .notif-badge-user {
+  color: #ef4444;
+  background: #fff;
+}
+
+/* Small-screen adjustments */
+@media (max-width: 420px) {
+  .btn.bell-button { width: 36px; height: 36px; font-size: 16px; }
+  .notif-badge { min-width: 18px; height: 18px; line-height: 18px; font-size: 11px; }
+  .bell-dot { top: 5px; right: 5px; width: 9px; height: 9px; }
+}

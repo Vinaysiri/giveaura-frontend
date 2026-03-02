@@ -1,0 +1,187 @@
+/* =====================================================
+   GIVEAURA – MOBILE DONATE (TRUST / PAYMENT GRADE)
+===================================================== */
+
+/* ---------- RESET / SAFETY ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont;
+  background: #f5f7fb;
+  color: #0f172a;
+}
+
+/* ---------- PAGE ---------- */
+.dm-page {
+  width: 100%;
+  min-height: 100vh;
+  padding-bottom: 96px; /* space for fixed donate button */
+  background: #f5f7fb;
+}
+
+/* =====================================================
+   HERO ADS (FULL WIDTH – MOBILE FIRST)
+===================================================== */
+
+.dm-carousel {
+  width: 100%;
+  overflow: hidden;
+  background: #000;
+}
+
+.dm-track {
+  display: flex;
+  transition: transform 0.45s ease;
+  will-change: transform;
+}
+
+.dm-track img {
+  min-width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Slightly taller on larger phones */
+@media (min-width: 420px) {
+  .dm-track img {
+    height: 260px;
+  }
+}
+
+/* =====================================================
+   POSTERS (HORIZONTAL SCROLL)
+===================================================== */
+
+.dm-posters {
+  display: flex;
+  gap: 12px;
+  padding: 12px 12px 4px;
+  overflow-x: auto;
+
+  scrollbar-width: none; /* Firefox */
+}
+
+.dm-posters::-webkit-scrollbar {
+  display: none; /* Chrome / Safari */
+}
+
+.dm-posters img {
+  flex: 0 0 140px;
+  height: 90px;
+  border-radius: 14px;
+  object-fit: cover;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.12);
+  cursor: pointer;
+  background: #fff;
+}
+
+/* =====================================================
+   CONTENT CARD
+===================================================== */
+
+.dm-content {
+  margin: 14px 12px;
+  padding: 16px;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+.dm-content h2 {
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.3;
+  margin: 0 0 8px;
+}
+
+.dm-trust {
+  font-size: 12px;
+  font-weight: 600;
+  color: #6b7280;
+  margin-bottom: 14px;
+}
+
+/* ---------- Amount Input ---------- */
+
+.dm-content input {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 14px;
+  border: 1.5px solid #e5e7eb;
+  outline: none;
+}
+
+.dm-content input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* =====================================================
+   ERROR
+===================================================== */
+
+.dm-error {
+  margin-top: 10px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: #fef2f2;
+  color: #b91c1c;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* =====================================================
+   FIXED DONATE CTA (PAYMENT GRADE)
+===================================================== */
+
+.dm-donate-btn {
+  position: fixed;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+
+  padding: 16px;
+  border-radius: 18px;
+  border: none;
+
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  color: #ffffff;
+
+  box-shadow: 0 16px 40px rgba(37, 99, 235, 0.45);
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.dm-donate-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* =====================================================
+   LOADING
+===================================================== */
+
+.dm-loading {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

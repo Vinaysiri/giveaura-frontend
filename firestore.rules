@@ -1,0 +1,213 @@
+rules_version = '2';
+service cloud.firestore {
+
+  /* ================= BASIC FUNCTIONS ================= */
+
+  function isSignedIn() {
+    return request.auth != null;
+  }
+
+  function isAdmin() {
+    return request.auth != null &&
+      (
+        request.auth.token.admin == true
+        ||
+        (
+          request.auth.token.email_verified == true &&
+          request.auth.token.email == "kotipallynagavinay12323@gmail.com"
+        )
+      );
+  }
+
+  function isOwner(uid) {
+    return isSignedIn() && request.auth.uid == uid;
+  }
+
+  match /databases/{database}/documents {
+
+    /* ================= USERS ================= */
+
+    match /users/{userId} {
+
+      // Single document read
+      allow get: if isOwner(userId) || isAdmin();
+
+      // Collection query (getDocs on users)
+      allow list: if isAdmin();
+
+      allow create: if isOwner(userId);
+
+      allow update: if isOwner(userId) || isAdmin();
+
+      allow delete: if isAdmin();
+
+      match /devices/{deviceId} {
+        allow read, write: if isOwner(userId);
+      }
+    }
+
+    /* ================= CAMPAIGNS ================= */
+
+    match /campaigns/{campaignId} {
+
+      allow read: if true;
+
+      allow create: if isSignedIn()
+        && request.resource.data.creatorId == request.auth.uid
+        && !("amountRaised" in request.resource.data)
+        && !("approved" in request.resource.data);
+
+      allow update: if isAdmin()
+        || (
+          isSignedIn()
+          && resource.data.creatorId == request.auth.uid
+          && request.resource.data.amountRaised == resource.data.amountRaised
+          && request.resource.data.approved == resource.data.approved
+        );
+
+
+      allow delete: if isAdmin();
+
+      /* Donations Subcollection */
+
+      match /donations/{donationId} {
+
+        allow get: if isAdmin()
+          || (isSignedIn() && resource.data.donorId == request.auth.uid)
+          || (
+            isSignedIn() &&
+            get(/databases/$(database)/documents/campaigns/$(campaignId)).data.creatorId
+              == request.auth.uid
+          );
+
+        allow list: if isAdmin()
+          || (
+            isSignedIn() &&
+            get(/databases/$(database)/documents/campaigns/$(campaignId)).data.creatorId
+              == request.auth.uid
+          );
+
+        allow create, update, delete: if false;
+      }
+    }
+
+    /* ================= COLLECTION GROUP DONATIONS ================= */
+
+    match /{path=**}/donations/{donationId} {
+
+      allow get: if isAdmin()
+        || (isSignedIn() && resource.data.donorId == request.auth.uid);
+
+      allow list: if isAdmin();
+
+      allow write: if false;
+    }
+
+    /* ================= CAMPAIGN BOOSTS ================= */
+
+match /campaignBoosts/{boostId} {
+
+  
+  allow get: if isAdmin()
+    || (
+      isSignedIn() &&
+      resource.data.ownerId == request.auth.uid
+    );
+
+  allow list: if isAdmin();
+
+  
+  allow create: if isSignedIn()
+    && request.resource.data.ownerId == request.auth.uid;
+
+  
+  allow update: if isAdmin();
+
+  allow delete: if false;
+}
+
+
+    /* ================= SUBSCRIPTIONS ================= */
+
+    match /subscriptions/{subId} {
+
+      allow get: if isSignedIn()
+        && resource.data.userId == request.auth.uid;
+
+      allow list: if isAdmin();
+
+      allow create, update, delete: if false;  // backend only
+    }
+
+    /* ================= EVENTS ================= */
+
+    match /events/{eventId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /event_allocations/{id} {
+      allow read, write: if isAdmin();
+    }
+
+    /* ================= NOTIFICATIONS ================= */
+
+    match /notifications/{id} {
+
+      allow create: if isSignedIn();
+
+      allow get: if isAdmin()
+        || resource.data.userId == request.auth.uid
+        || resource.data.recipientId == request.auth.uid;
+
+      allow list: if isAdmin()
+        || isSignedIn();
+
+      allow update, delete: if isAdmin();
+    }
+
+    /* ================= PLATFORM STATS ================= */
+
+    match /platformStats/{docId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    /* ================= POPUPS ================= */
+
+    match /popups/{popupId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    /* ================= ADS ================= */
+
+    match /ads/{adId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    /* ================= PLATFORM CONTRIBUTIONS ================= */
+
+    match /platform_contributions/{id} {
+      allow get: if isAdmin();
+      allow list: if isAdmin();
+      allow write: if false;
+    }
+
+    /* ================= SITE SETTINGS ================= */
+
+    match /settings/{docId} {
+      allow read: if true;
+      allow get: if true;
+      allow list: if true;
+      allow create, update, delete: if isAdmin();
+    }
+
+    /* ================= DEFAULT DENY ================= */
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

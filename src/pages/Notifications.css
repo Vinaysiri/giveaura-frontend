@@ -1,0 +1,265 @@
+/* =========================================================
+   Notifications – Trust / Institutional UI
+   GiveAura (Production Grade)
+========================================================= */
+
+/* ---------------- Root ---------------- */
+:root {
+  --notif-bg: #f9fafb;
+  --notif-card: #ffffff;
+
+  --notif-primary: #0f766e;
+  --notif-primary-soft: #e6f4f1;
+
+  --notif-text: #111827;
+  --notif-muted: #6b7280;
+  --notif-border: #e5e7eb;
+
+  --notif-success: #16a34a;
+  --notif-warning: #d97706;
+  --notif-danger: #dc2626;
+
+  --radius-lg: 14px;
+  --radius-md: 10px;
+
+  --shadow-soft: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+/* ---------------- Page ---------------- */
+.notif-page {
+  max-width: 920px;
+  margin: 32px auto;
+  padding: 24px;
+  background: var(--notif-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--notif-border);
+  box-shadow: var(--shadow-soft);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  color: var(--notif-text);
+}
+
+/* ---------------- Header ---------------- */
+.notif-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.notif-title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--notif-text);
+}
+
+/* ---------------- Header Actions ---------------- */
+.notif-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Back */
+.notif-back {
+  background: transparent;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--notif-primary);
+  cursor: pointer;
+}
+
+/* Mark all read */
+.notif-markall {
+  padding: 7px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--notif-border);
+  background: var(--notif-primary);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Unread badge */
+.notif-unread {
+  font-size: 13px;
+  color: var(--notif-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.notif-unread span {
+  min-width: 28px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  text-align: center;
+  font-weight: 700;
+  background: var(--notif-primary-soft);
+  color: var(--notif-primary);
+}
+
+/* ---------------- Empty State ---------------- */
+.notif-empty {
+  text-align: center;
+  padding: 40px 0;
+  font-size: 14px;
+  color: var(--notif-muted);
+}
+
+/* ---------------- List ---------------- */
+.notif-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+}
+
+/* ---------------- Item ---------------- */
+.notif-item {
+  background: var(--notif-card);
+  border-radius: var(--radius-md);
+  padding: 14px;
+  border: 1px solid var(--notif-border);
+}
+
+.notif-item.unread {
+  border-color: #cbd5e1;
+  background: #ffffff;
+}
+
+.notif-item.read {
+  background: #fafafa;
+}
+
+/* ---------------- Content ---------------- */
+.notif-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+/* Left */
+.notif-item-title {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: var(--notif-text);
+}
+
+.notif-item-msg {
+  font-size: 14px;
+  color: #374151;
+  line-height: 1.5;
+}
+
+/* Campaign link */
+.notif-link {
+  margin-top: 8px;
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--notif-primary);
+  background: #ffffff;
+  color: var(--notif-primary);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Right */
+.notif-right {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-end;
+}
+
+/* ---------------- Buttons ---------------- */
+.notif-btn {
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.notif-btn.success {
+  background: var(--notif-success);
+  color: #ffffff;
+}
+
+.notif-btn.warning {
+  background: var(--notif-warning);
+  color: #ffffff;
+}
+
+.notif-btn.secondary {
+  background: #f3f4f6;
+  color: #111827;
+}
+
+/* ---------------- Modal ---------------- */
+.notif-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3000;
+}
+
+.notif-modal {
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  width: min(420px, 90vw);
+  border: 1px solid var(--notif-border);
+  box-shadow: 0 25px 80px rgba(0,0,0,0.35);
+  text-align: center;
+}
+
+.notif-modal h3 {
+  margin: 0 0 10px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.notif-modal p {
+  font-size: 14px;
+  color: #374151;
+  margin-bottom: 16px;
+}
+
+.notif-modal-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* ---------------- Responsive ---------------- */
+@media (max-width: 640px) {
+  .notif-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .notif-actions {
+    flex-wrap: wrap;
+  }
+
+  .notif-content {
+    flex-direction: column;
+  }
+
+  .notif-right {
+    align-items: flex-start;
+  }
+}

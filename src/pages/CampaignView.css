@@ -1,0 +1,663 @@
+/* ======================================================
+   Campaign View – Trust / Professional UI
+   Donation-First, Calm & Credible
+====================================================== */
+
+/* ---------- Container ---------- */
+.cv-container {
+  max-width: 1100px;
+  margin: 24px auto;
+  padding: 24px;
+  background: #ffffff;
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+}
+
+/* ---------- Header ---------- */
+.cv-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.cv-header button {
+  background: none;
+  border: none;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #2563eb;
+}
+
+/* ---------- Header Actions ---------- */
+.cv-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.cv-actions button {
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 13px;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  color: #111827;
+  cursor: pointer;
+}
+
+.cv-actions button.primary {
+  background: #0f766e;
+  color: #ffffff;
+  border-color: #0f766e;
+}
+
+.cv-actions button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ---------- Media ---------- */
+.cv-container > img,
+.cv-container > video {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  background: #f9fafb;
+}
+
+/* ---------- Title & Description ---------- */
+.cv-container h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #111827;
+}
+
+.cv-container p {
+  font-size: 15px;
+  line-height: 1.65;
+  color: #374151;
+  margin-bottom: 16px;
+}
+
+/* ---------- Stats ---------- */
+.cv-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+  margin: 18px 0;
+}
+
+.cv-stats span {
+  background: #f9fafb;
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 13px;
+  color: #111827;
+  border: 1px solid #e5e7eb;
+}
+
+/* ---------- Timing Badge ---------- */
+.cv-timing {
+  margin-top: 16px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  background: #f3f4f6;
+  color: #374151;
+}
+
+/* ---------- Progress ---------- */
+.cv-progress {
+  height: 8px;
+  background: #e5e7eb;
+  border-radius: 999px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.cv-progress div {
+  height: 100%;
+  background: #16a34a;
+  border-radius: 999px;
+  transition: width 0.6s ease;
+}
+
+.cv-container small {
+  display: inline-block;
+  margin-top: 6px;
+  font-weight: 600;
+  font-size: 13px;
+  color: #166534;
+}
+
+/* ======================================================
+   DONORS – CLEAN & TRUSTED
+====================================================== */
+
+.cv-donors {
+  list-style: none;
+  padding: 0;
+  margin-top: 14px;
+  display: grid;
+  gap: 8px;
+}
+
+.cv-donor-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+}
+
+.cv-donor-avatar {
+  width: 32px !important;
+  height: 32px !important;
+  min-width: 32px !important;
+  min-height: 32px !important;
+  max-width: 32px !important;
+  max-height: 32px !important;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #e5e7eb;
+  flex-shrink: 0;
+}
+
+.cv-donor-meta {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  min-width: 0;
+}
+
+.cv-donor-meta strong {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 65%;
+}
+
+.cv-donor-meta span {
+  font-size: 14px;
+  font-weight: 700;
+  color: #0f766e;
+}
+
+/* ---------- Donor Section ---------- */
+.cv-donor-section {
+  max-width: 520px;
+  margin: 28px auto 0;
+}
+
+/* ======================================================
+   DONOR TABS – SIMPLE
+====================================================== */
+
+.cv-donor-tabs-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 24px 0 16px;
+}
+
+.cv-donor-tabs {
+  display: flex;
+  gap: 6px;
+  padding: 4px;
+  border-radius: 8px;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+}
+
+.cv-donor-tabs button {
+  border: none;
+  cursor: pointer;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  background: transparent;
+  color: #374151;
+}
+
+.cv-donor-tabs button.active {
+  background: #ffffff;
+  color: #0f766e;
+  border: 1px solid #e5e7eb;
+}
+
+/* ======================================================
+   PROOF DOCUMENTS – VERIFICATION FIRST
+====================================================== */
+
+.cv-proofs {
+  margin: 20px 0;
+}
+
+.cv-proof-title {
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.cv-proof-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 14px;
+}
+
+.cv-proof-card {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+
+/* ======================================================
+   MEDIA SLIDER
+====================================================== */
+
+.cv-media-slider {
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  background: #f9fafb;
+}
+
+.cv-media-track {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+.cv-media-track::-webkit-scrollbar {
+  display: none;
+}
+
+.cv-media-item {
+  flex: 0 0 100%;
+  height: 100%;
+  scroll-snap-align: center;
+}
+
+.cv-media-item img,
+.cv-media-item video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ---------- Loading / Error ---------- */
+.cv-loading,
+.cv-error {
+  text-align: center;
+  padding: 60px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #6b7280;
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 640px) {
+  .cv-container {
+    padding: 16px;
+    border-radius: 0;
+  }
+
+  .cv-container > img,
+  .cv-container > video {
+    height: 220px;
+  }
+
+  .cv-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cv-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .cv-donor-avatar {
+    width: 28px !important;
+    height: 28px !important;
+    min-width: 28px !important;
+    min-height: 28px !important;
+    max-width: 28px !important;
+    max-height: 28px !important;
+  }
+
+  .cv-donor-meta strong {
+    max-width: 55%;
+    font-size: 13px;
+  }
+
+  .cv-donor-meta span {
+    font-size: 13px;
+  }
+
+  .cv-media-slider {
+    height: 220px;
+  }
+}
+
+/* ================= DONATION TOAST ================= */
+
+.cv-donation-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%) translateY(20px);
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 14px 18px;
+  min-width: 260px;
+  max-width: 92%;
+  text-align: center;
+
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.15);
+  animation: donationSlideUp 0.35s ease forwards;
+
+  z-index: 999;
+}
+
+.cv-donation-toast strong {
+  color: #0f766e;
+}
+
+.cv-donation-sub {
+  margin-top: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #6b7280;
+}
+
+@keyframes donationSlideUp {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* Mobile refinement */
+@media (max-width: 640px) {
+  .cv-donation-toast {
+    font-size: 13px;
+    padding: 12px 14px;
+  }
+}
+
+/* ======================================================
+   Campaign Action Buttons – Trust Grade
+====================================================== */
+
+.cv-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Base button */
+.cv-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 10px 16px;
+  border-radius: 999px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  border: 1px solid transparent;
+  cursor: pointer;
+  white-space: nowrap;
+
+  transition:
+    background 0.15s ease,
+    box-shadow 0.15s ease,
+    transform 0.12s ease;
+}
+
+/* Icons inside buttons */
+.cv-btn svg,
+.cv-share-btn svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+/* ---------------- SHARE ---------------- */
+
+.cv-share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 10px 16px;
+  border-radius: 999px;
+
+  background: #ffffff;
+  color: #0f172a;
+
+  border: 1px solid #e5e7eb;
+  font-weight: 600;
+  font-size: 14px;
+
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.cv-share-btn:hover {
+  background: #f8fafc;
+  box-shadow: 0 4px 14px rgba(2, 6, 23, 0.08);
+  transform: translateY(-1px);
+}
+
+.cv-share-icon {
+  color: #2563eb;
+}
+
+/* ---------------- EDIT ---------------- */
+
+.cv-btn-edit {
+  background: #f1f5f9;
+  color: #0f172a;
+  border: 1px solid #e5e7eb;
+}
+
+.cv-btn-edit:hover {
+  background: #e2e8f0;
+  box-shadow: 0 4px 12px rgba(2, 6, 23, 0.08);
+}
+
+/* ---------------- DONATE (Primary) ---------------- */
+
+.cv-btn-donate {
+  background: #0f766e;
+  color: #ffffff;
+  border: none;
+
+  box-shadow: 0 8px 22px rgba(15, 118, 110, 0.35);
+}
+
+.cv-btn-donate svg {
+  fill: #ffffff;
+}
+
+.cv-btn-donate:hover {
+  background: #115e59;
+  box-shadow: 0 12px 30px rgba(15, 118, 110, 0.45);
+  transform: translateY(-1px);
+}
+
+/* Disabled state (safety) */
+.cv-btn:disabled,
+.cv-share-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+/* Mobile tightening */
+@media (max-width: 640px) {
+  .cv-btn,
+  .cv-share-btn {
+    padding: 9px 14px;
+    font-size: 13px;
+  }
+}
+
+/* ================= PROOF DOCUMENTS ================= */
+
+.cv-proofs {
+  margin: 24px 0;
+}
+
+.cv-proof-title {
+  margin-bottom: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #111827;
+}
+
+/* GRID – keeps square blocks */
+.cv-proof-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+/* CARD BASE */
+.cv-proof-card {
+  display: block;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.cv-proof-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.12);
+}
+
+/* ================= IMAGE PROOF ================= */
+
+.cv-proof-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+/* ================= PDF PROOF ================= */
+
+.cv-proof-pdf-card {
+  display: flex;
+  flex-direction: column;
+  height: 220px;
+  background: #ffffff;
+}
+
+/* PARTIAL PDF PREVIEW AREA */
+.cv-proof-pdf-preview {
+  height: 140px;
+  background: #f8fafc;
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* SVG ICON – ALWAYS VISIBLE */
+.cv-proof-pdf-icon {
+  width: 56px;
+  height: 56px;
+}
+
+.cv-proof-pdf-icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* META INFO */
+.cv-proof-pdf-meta {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cv-proof-pdf-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cv-proof-pdf-hint {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 640px) {
+  .cv-proof-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+
+  .cv-proof-card img {
+    height: 140px;
+  }
+
+  .cv-proof-pdf-card {
+    height: 200px;
+  }
+
+  .cv-proof-pdf-preview {
+    height: 120px;
+  }
+}
